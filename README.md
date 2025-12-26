@@ -39,7 +39,7 @@ Projede sıfırdan bir model eğitmek yerine, önceden milyonlarca görselle eğ
 ### Eğitim Detayları
 - **Optimizer:** Adam (Dinamik öğrenme hızı ayarı için).
 - **Loss:** Cross-Entropy (Çok sınıflı hata hesaplama için).
-- **Epoch:** 10 (Kararlı öğrenme eğrisi için).
+- **Epoch:** 5 (Kararlı öğrenme eğrisi için).
 
 ### Değerlendirme Metrikleri
 Model başarısı sadece Accuracy (Doğruluk) ile değil, medikal projelerde kritik olan şu metriklerle ölçülmüştür:
@@ -75,4 +75,4 @@ Sunum sırasında modelin öğrenme eğrileri, hata matrisi analizi ve canlı **
 2. Analizi inceleyin: `analiz_ve_egitim.ipynb`
 3. Arayüzü çalıştırın: `python serve.py`
 
-
+NOT: chest_model_final.pth dosyası boyutundan dolayı github'a yüklenemedi.
