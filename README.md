@@ -17,6 +17,7 @@ Geleneksel bilgisayarlı görü yöntemlerinin aksine, derin öğrenme (Deep Lea
 ##  2. Veri Setinin Belirlenmesi 
 
 Projede Kaggle üzerinden sağlanan **"Chest CT-Scan Images"** veri seti kullanılmıştır.
+link: https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images
 - **Sınıflar:** Adenocarcinoma, Large Cell Carcinoma, Squamous Cell Carcinoma ve Normal.
 - **Veri Dağılımı:** Veri seti dengeli bir dağılıma sahiptir ve modelin her bir sınıfı yeterli düzeyde öğrenmesine olanak tanımaktadır.
 - **İşleme:** Görüntüler 224x224 boyutuna standardize edilmiş ve ImageNet normlarına göre normalize edilmiştir.
@@ -45,10 +46,21 @@ Projede sıfırdan bir model eğitmek yerine, önceden milyonlarca görselle eğ
 Model başarısı sadece Accuracy (Doğruluk) ile değil, medikal projelerde kritik olan şu metriklerle ölçülmüştür:
 - **Sensitivity (Recall):** Kanserli vakaları kaçırmama oranı (Medikal açıdan en kritik değer).
 - **Specificity:** Sağlıklı kişiye yanlış tanı koymama oranı.
+- **Precision:** Sağlıklı dokuları yanlış teşhis etmeme kararlılığı
 - **F1-Score:** Sınıflar arası dengeli performans ölçümü.
 - **Confusion Matrix:** Hataların dağılım analizi.
 
-Not: Modelin başarısı sadece genel doğruluk (Accuracy) ile değil, tıbbi teşhislerin doğası gereği kritik olan Recall ve Specificity metriklerine bakılarak yorumlanmalıdır.
+Not: Modelin başarısı sadece genel doğruluk (Accuracy) ile değil, tıbbi teşhislerin doğası gereği kritik olan Recall ve Precision - Specificity metriklerine beraber bakılarak yorumlanmalıdır. Yapılan 5 epochluk eğitim sonucunda accuracy %99.51 çıkmasıyla birlikte recall ve specifity'yi beraber yorumlamamıza yardımcı olan F1-Score:
+
+Accuracy: %90.
+
+Weighted F1-Score: %90.
+
+Normal sınıfı F1: 1.00
+
+Kanserli sınıflar (Large Cell, Squamous): %86-%92 arası
+
+olacak şekilde sonuç vermiştir. Böylelikle F1-Score, modelin hem kanserli vakaları yakalama gücünü (Recall) hem de sağlıklı dokuları yanlış teşhis etmeme kararlılığını (Precision) aynı anda optimize eder. Elde ettiğimiz %90'lık genel F1-Score değeri, modelimizin medikal açıdan güvenilir, dengeli ve klinik karar destek süreçlerine uygun bir performans sergilediğini kanıtlamaktadır.
 
 
 ---
