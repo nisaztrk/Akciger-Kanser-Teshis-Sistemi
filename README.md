@@ -76,11 +76,6 @@ Proje, GitHub üzerinde modüler bir yapıda düzenlenmiştir:
 
 ---
 
-##  6. Proje Sunumu 
-
-Sunum sırasında modelin öğrenme eğrileri, hata matrisi analizi ve canlı **Gradio** demosu sunulacaktır. Sistem, bir CT görselini saniyeler içinde analiz edip olasılık yüzdeleriyle birlikte teşhis koyma yeteneğine sahiptir.
-
----
 
 ##  Kullanım
 1. Kütüphaneleri yükleyin: `pip install -r requirements.txt`
